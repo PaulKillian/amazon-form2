@@ -18,8 +18,11 @@ function App() {
     } else {
       event.preventDefault();
       const form = document.querySelector('form')
+      //FormData object
       const formData = new FormData(form);
+      //Returned an iterator
       const entries = formData.entries();
+      //Transformed to object from list of key-value pairs
       const data = Object.fromEntries(entries);
       setSubmitComplete(data)
       setSubmit('done')
