@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Ember';
+  src: local('Ember'), 
+  url(./fonts/Ember.ttf) format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo-dimensions {
+  width: 100px;
+  height: auto;
+  margin: 14px 0 18px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-flex {
+  display: flex;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
+main {
+  font-family: 'Ember';
+}
+
+form {
+  border: 1px solid #DDDDDD;
+  padding: 1rem;
+  border-radius: 5px;
+  padding: 14px 18px;
+  width: 315px;
+}
+
+label {
+  font-size: small;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 22px;
+  padding: 3px 7px;
+}
+input:focus {
+  border-color: #1188BB !important
+}
+
+p:nth-child(1) {
+  font-size: 28px;
+  margin: 0px;
+}
+
+p {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+hr {
+  width: 80%;
+  height:1px;
+  border-width:0;
+  background-color:rgba(33, 33, 33, 0.071);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.167);
+}
+
+a {
+  text-decoration: none;
+  color: #1088BA;
+}
+
+span {
+  color: #8C85FA
+}
+
+h3 {
+  margin-top: 0;
+  color: #4f4f4f
+}
+
+.bg {
+  background: #cdfff2;
+  min-height: 100vh;
+  padding-left: 3rem;
+  padding-top: 3rem;
+}
+
+.padding {
+  padding: 14px 0 3px 0;
+}
+
+.App-main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn {
+  background: rgb(25,155,214);
+  background: linear-gradient(180deg, rgba(25,155,214,1) 0%, rgba(18,120,166,1) 100%);
   color: white;
+  padding: 7px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.hidden {
+  display: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.center-align {
+  text-align: center
+}
+
+.margin-auto {
+  margin: auto
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-dimensions {
+    width: 20%;
   }
 }
