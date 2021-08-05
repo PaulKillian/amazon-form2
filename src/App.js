@@ -1,5 +1,6 @@
 import './App.css';
 import logo from './amazon-logo.png'
+import comic from './comic.png'
 import { useState } from 'react'
 import './fonts/Ember.ttf'
 
@@ -43,9 +44,9 @@ function App() {
     return (
       <div className='App'>
         <main className='App-main'>
-          <h1 className={ redoForm === null ? 'hidden' : null}>
+          <p className={ redoForm === null ? 'hidden' : null}>
             There was a problem Passwords must match
-          </h1>
+          </p>
           <img className={'logo-dimensions'} src={logo} alt='amazon logo'/>
             <form className={'form-flex'} onSubmit={handleSubmit}>
               <p>Create account</p>
@@ -87,8 +88,9 @@ function App() {
             </form>
             <hr></hr>
             <p className={'center-align'}>
-              <a href='https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088'>Conditions of Use</a>  
-              <a href='https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496'>Privacy Notice    </a><a href='https://www.amazon.com/gp/help/customer/display.html'>Help</a>
+              <a className={'margin-right'} href='https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088'>Conditions of Use</a>  
+              <a className={'margin-right'} href='https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496'>Privacy Notice</a>
+              <a href='https://www.amazon.com/gp/help/customer/display.html'>Help</a>
             </p>
             <p className={'center-align'}>© 1996-2021, Amazon.com, Inc. or its affiliates</p>
           </main>
@@ -96,11 +98,14 @@ function App() {
     )
   } else {
     return (
-      <div className='bg'>
-        <h3>Name: <span>{submitComplete.name}</span></h3>
-        <h3>Email: <span>{submitComplete.email}</span></h3>
-        <h3>Password: <span>{submitComplete.password}</span></h3>
-        <h3>Re-Entered Password: <span >{submitComplete.reenter}</span></h3>
+      <div className={'flex'}>
+        <div className={'padding'}>
+          <h3>Name: <span>{submitComplete.name}</span></h3>
+          <h3>Email: <span>{submitComplete.email}</span></h3>
+          <h3>Password: <span>{submitComplete.password}</span></h3>
+          <h3>Re-Entered Password: <span >{submitComplete.reenter}</span></h3>
+        </div>
+        <img className={'img-dimension'} src={comic} alt={'comic'}/>
       </div>
     )
   }
