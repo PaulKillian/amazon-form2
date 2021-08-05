@@ -4,17 +4,6 @@
   url(./fonts/Ember.ttf) format('truetype');
 }
 
-.logo-dimensions {
-  width: 100px;
-  height: auto;
-  margin: 14px 0 18px 0;
-}
-
-.form-flex {
-  display: flex;
-  flex-direction: column;
-}
-
 main {
   font-family: 'Ember';
 }
@@ -78,11 +67,20 @@ h3 {
   color: #4f4f4f
 }
 
-.bg {
-  background: #cdfff2;
-  min-height: 100vh;
-  padding-left: 3rem;
-  padding-top: 3rem;
+.logo-dimensions {
+  width: 100px;
+  height: auto;
+  margin: 14px 0 18px 0;
+}
+
+.form-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-dimension {
+  width: 40%;
+  height: 100vh;
 }
 
 .padding {
@@ -115,8 +113,14 @@ h3 {
   text-align: center
 }
 
-.margin-auto {
-  margin: auto
+.margin-right {
+  margin-right: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 600px) {
