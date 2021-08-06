@@ -6,39 +6,38 @@ import './fonts/Ember.ttf'
 
 function App() {
   const [submit, setSubmit] = useState('');
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
   const [passReEnter, setPassReEnter] = useState('')
   const [redoForm, setRedoForm] = useState(null)
-  const [onChange, setOnChange] = useState('');
-  const [submitComplete, setSubmitComplete] = useState({})
 
   const handleSubmit = (event) => {
     if(passReEnter !== pass) {
       event.preventDefault();
       setRedoForm(true)
     } else {
-      event.preventDefault();
-      const form = document.querySelector('form')
-      //FormData object
-      const formData = new FormData(form);
-      //Returned an iterator
-      const entries = formData.entries();
-      //Transformed to object from list of key-value pairs
-      const data = Object.fromEntries(entries);
-      setSubmitComplete(data)
       setSubmit('done')
     }
   }
 
   const handleChange = (event) => {
-    if(event.target.name === 'password') {
-      setPass(event.target.value)
-    } 
-    if(event.target.name === 'reenter') {
-      setPassReEnter(event.target.value)
-    }
-    setOnChange(event.target.value)
+    switch (event.target.name) {
+      case 'name':
+        setName(event.target.value)
+        break;
+      case 'email':
+        setEmail(event.target.value)
+        break;
+      case 'password':
+        setPass(event.target.value)
+        break;
+      case 'reenter':
+        setPassReEnter(event.target.value)
+      break;
+      default: return
   }
+}
 
   if( submit === '' ) {
     return (
@@ -53,6 +52,7 @@ function App() {
               <label className={'padding'}>Your name</label>
               <input 
                 type='text' 
+                value={name}
                 name='name' 
                 required 
                 onChange={handleChange}
@@ -60,6 +60,7 @@ function App() {
               <label className={'padding'}>Email</label>
               <input 
                 type='text' 
+                value={email}
                 name='email' 
                 required 
                 onChange={handleChange}
@@ -67,6 +68,7 @@ function App() {
               <label className={'padding'}>Password</label>
               <input 
                 type='text' 
+                value={pass}
                 name='password' 
                 placeholder='At least 6 characters'
                 required 
@@ -75,6 +77,7 @@ function App() {
               <label>Re-enter password</label>
               <input 
                 type='text' 
+                value={passReEnter}
                 name='reenter' 
                 required 
                 onChange={handleChange}
@@ -100,10 +103,10 @@ function App() {
     return (
       <div className={'flex'}>
         <div className={'padding'}>
-          <h3>Name: <span>{submitComplete.name}</span></h3>
-          <h3>Email: <span>{submitComplete.email}</span></h3>
-          <h3>Password: <span>{submitComplete.password}</span></h3>
-          <h3>Re-Entered Password: <span >{submitComplete.reenter}</span></h3>
+          <h3>Name: <span>{name}</span></h3>
+          <h3>Email: <span>{email}</span></h3>
+          <h3>Password: <span>{pass}</span></h3>
+          <h3>Re-Entered Password: <span >{passReEnter}</span></h3>
         </div>
         <img className={'img-dimension'} src={comic} alt={'comic'}/>
       </div>
